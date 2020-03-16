@@ -18,10 +18,9 @@ class _MyAppState extends State<MyApp> with TickerProviderStateMixin {
 
   @override
   void dispose() {
-    //new
-    for (ChatMessage message in _listMessage) //new
-      message.animationController.dispose(); //new
-    super.dispose(); //new
+    for (ChatMessage message in _listMessage)
+      message.animationController.dispose();
+    super.dispose();
   }
 
   @override
@@ -46,8 +45,8 @@ class _MyAppState extends State<MyApp> with TickerProviderStateMixin {
             ),
             new Container(
               decoration:
-                  new BoxDecoration(color: Theme.of(context).cardColor), //new
-              child: _buildCompotionInput(), //modified
+                  new BoxDecoration(color: Theme.of(context).cardColor),
+              child: _buildCompotionInput(),
             ),
           ],
         ),
@@ -84,8 +83,8 @@ class _MyAppState extends State<MyApp> with TickerProviderStateMixin {
     ChatMessage message = new ChatMessage(
       message: _txtControllerMessage.text,
       animationController: new AnimationController(
-        duration: new Duration(milliseconds: 700), //new
-        vsync: this, //new
+        duration: new Duration(milliseconds: 700),
+        vsync: this,
       ),
     );
     setState(() {
